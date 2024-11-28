@@ -13,6 +13,7 @@ public class Main {
         list.add(3);
         list.add(4);
         list.add(5);
+
         CustumMutableClass classCustum = new CustumMutableClass(111);
 
         ImmutableClass classI = new ImmutableClass("ClassOne", list, classCustum);
@@ -51,6 +52,7 @@ public class Main {
         System.out.println(map.containsValue(11));
         System.out.println(map.containsValue(22));
         System.out.println(map.containsValue(33));
+
 
 
         Box<String> stringBox = new Box<>(null);

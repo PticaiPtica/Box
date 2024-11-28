@@ -7,9 +7,6 @@ public class CustumMutableClass {
         this.value = value;
     }
 
-    public CustumMutableClass() {
-    }
-
     public Integer getValue() {
         return value;
     }

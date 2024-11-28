@@ -1,7 +1,9 @@
 package Hm;
 
 public class Box<T> {
+
     private T type;
+
 
     public Box(T type) {
         this.type = type;
@@ -15,11 +17,9 @@ public class Box<T> {
         this.type = type;
     }
 
+
     public boolean isEmpty() {
-        boolean empty = true;
-        if (type != null) {
-            empty = false;
-        }
+        boolean empty = type == null;
 
         return empty;
     }
