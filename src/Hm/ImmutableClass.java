@@ -16,14 +16,17 @@ public final class ImmutableClass {
     }
 
     public String getClassName() {
+
         return className;
     }
 
     public List<Integer> getNumbers() {
+
         return numbers;
     }
 
     public CustumMutableClass getCustum() {
+
         return custum;
     }
 
@@ -34,18 +37,6 @@ public final class ImmutableClass {
                 ", custum = " + custum;
     }
 
-   /* @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Hm.ImmutableClass that = (Hm.ImmutableClass) o;
-        return Objects.equals(className, that.className) && Objects.equals(numbers, that.numbers) && Objects.equals(custum, that.custum);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(className, numbers, custum);
-    }*/
 
     @Override
     public boolean equals(Object o) {
