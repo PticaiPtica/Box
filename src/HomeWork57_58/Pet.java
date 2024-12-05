@@ -7,6 +7,7 @@ public class Pet {
     public Pet(String name, int age) {
         this.name = name;
         this.age = age;
+
     }
 
     public Integer getAge() {
@@ -14,6 +15,7 @@ public class Pet {
     }
 
     public String getName() {
+
         return name;
     }
 

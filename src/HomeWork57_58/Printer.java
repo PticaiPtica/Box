@@ -6,7 +6,6 @@ public interface Printer {
      * String Message
      *      **/
 
-
     public void print(String Message);
 
 }

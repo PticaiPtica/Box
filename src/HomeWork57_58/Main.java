@@ -24,6 +24,7 @@ public class Main {
      *
      */
 
+
     private static void task1() {
         Printer printer = new Printer() {
             @Override
