@@ -2,6 +2,7 @@ package HomeWork59_60;
 
 import java.util.*;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Library {
@@ -54,11 +55,15 @@ public class Library {
         return books.values().stream().sorted(Comparator.comparing(Book::getTitle)).toList();
     }
 
+    public List getBooks(Comparator<Book> comparator) {
+        return books.values().stream().sorted(comparator).toList();
+    }
+
     /**
      * Получение List с книгами доступных или недоступных
      * @return List
      */
-    public List getBooks2(Boolean rest) {
+    public List getBooks(Boolean rest) {
         if (rest) {
             return books.values().stream().filter(Book::getIsAvailable).toList();
         }
@@ -82,9 +87,9 @@ public class Library {
      */
     public Integer countBooks(Boolean rest) {
         if (rest) {
-            return books.values().stream().filter(Book::getIsAvailable).toList().size();
+            return Math.toIntExact(books.values().stream().filter(Book::getIsAvailable).count());
         }
-        return books.values().stream().filter(book -> !book.getIsAvailable()).toList().size();
+        return Math.toIntExact(books.values().stream().filter(book -> !book.getIsAvailable()).count());
     }
 
     /**+
@@ -103,5 +108,33 @@ public class Library {
     }
 
 
+    public Book getBooks(int idBook) {
+        return books.getOrDefault(idBook, null);
+
+    }
+
+    /**
+     * Получения с помощью stream api мапы с книгами,
+     * где с помощью метода collect(Collectors.groupingBy(…))
+     * книги группируются по авторам
+     * @return
+     */
+    public Map<Boolean, List<Book>> booleanListMap() {
+        return books.values().stream().collect(Collectors.partitioningBy(Book::getIsAvailable));
+
+
+    }
+
+    /**
+     * Получения с помощью stream api мапы с книгами,
+     * где с помощью метода collect(Collectors.partitioningBy(…))
+     * книги разделяются по условию isAvailable – т.е.
+     * Cписок доступных книг и список недоступных кни
+     * @return
+     */
+    public Map<String, List<Book>> mapAuthorGroup() {
+        return books.values().stream().collect(Collectors.groupingBy(Book::getAuthor));
+
+    }
 }
 
