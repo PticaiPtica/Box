@@ -45,8 +45,8 @@ public class Book {
 
     @Override
     public String toString() {
-        return " Книга " +
-                "c названием  " + title +
+        return " Книга " + id +
+                " c названием  " + title +
                 ", автор = " + author +
                 ", доступна ли = " + isAvailable;
     }
